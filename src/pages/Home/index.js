@@ -11,7 +11,6 @@ import {
   CardAgenda,
 } from "./styles";
 import { useNavigate } from "react-router-dom";
-import { Header } from "../../components/Header";
 
 // Objeto representandos os dados do DB Temporario
 import ArrayAgenda from "../../ObjPessoaBD";
@@ -19,7 +18,7 @@ import ArrayAgenda from "../../ObjPessoaBD";
 export const Home = () => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
-  const [statusbarCloseOpen, setStatusbatCloseOpen] = useState(true);
+  const [statusbarCloseOpen, setStatusbatCloseOpen] = useState(false);
   const now = new Date();
   const arrayDays = [0, 1, 2, 3, 4, 5, 6];
   useEffect(() => {
@@ -59,24 +58,11 @@ export const Home = () => {
     };
   }, [navigate]);
 
-  const handleLogout = () => {
-    firebase
-      .auth()
-      .signOut() // Faça logout do usuário
-      .then(() => {
-        // O observador de autenticação cuidará do redirecionamento para /apresentation
-      })
-      .catch((error) => {
-        console.error("Erro ao fazer logout:", error);
-      });
-  };
-
   return (
     <>
-      <Header />
       <HomeContainer>
         <Saudation>
-          <h1>Olá{userName}, Igor Rafael de Melo</h1>
+          <h1>Olá{userName}, Lucas Konzen</h1>
           <Statusbar>
             {statusbarCloseOpen ? (
               <>
@@ -119,11 +105,12 @@ export const Home = () => {
           {ArrayAgenda.map((Val) => {
             return (
               <CardAgenda>
-                <h1>Próximo Horario: {Val.horario}</h1>
-                <h1>Nome: {Val.nome}</h1>
-                <h1>Telefone: {Val.telefone}</h1>
+                <div>{Val.horario}</div>
+                <h2> {Val.nome}</h2>
+                <h1>Contato: {Val.telefone}</h1>
                 <h1>Serviço: {Val.servico}</h1>
                 <h1>Status Pgm: {Val.statusPayment}</h1>
+                <section></section>
               </CardAgenda>
             );
           })}

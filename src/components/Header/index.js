@@ -6,10 +6,14 @@ import { HamburgerButton } from "../MenuHamburger";
 import { useNavigate } from "react-router-dom";
 import { LogoBrain } from "./styles";
 import IMGLogo from "../../assets/LOGO ATUAL3.png";
+import { useAuth } from "../../routes/authContext"; 
 
 export const Header = () => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, signOut } = useAuth();
+  
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -20,10 +24,16 @@ export const Header = () => {
     navigate("/register");
   };
 
-  const handleButtonClick = () => {
-    navigate("/login");
-    setIsMenuOpen(false);
+  const handleLogout = async () => {
+    try {
+      await signOut();
+      setIsMenuOpen(false);
+      navigate("/");
+    } catch (error) {
+      console.error("Erro ao fazer logout:", error);
+    }
   };
+
 
   return (
     <>
@@ -37,14 +47,21 @@ export const Header = () => {
       <MenuHoriz open={isMenuOpen}>
         <HamburgerButton onClick={toggleMenu} isOpen={isMenuOpen} />
         <LogoBrain>
-          <img src={IMGLogo} />
+          <img src={IMGLogo} alt="Logo" />
         </LogoBrain>
         <Buttons>
-          <Button onClick={handleButtonClick} title="Login" />
-          <Button onClick={handleRegister} title="Registro" />
-          <Button onClick={handleButtonClick} title="Saiba mais" />
+          {user ? (
+            <Button onClick={handleLogout} title="Logout" />
+          ) : (
+            <>
+              <Button onClick={() => navigate("/login")} title="Login" />
+              <Button onClick={handleRegister} title="Registro" />
+              <Button onClick={() => navigate("/saiba-mais")} title="Saiba mais" />
+            </>
+          )}
         </Buttons>
       </MenuHoriz>
     </>
   );
 };
+

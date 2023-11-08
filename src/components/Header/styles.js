@@ -4,16 +4,15 @@ import { Themes } from "../../styles/themes";
 export const Container = styled.div`
   width: 100%;
   height: 10%;
-  max-height: 20%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
   background-color: ${Themes.black};
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   position: fixed;
-  top: 0px;
+  top: 0;
+  z-index: 1;
 `;
 
 export const Logo = styled.img`
@@ -31,7 +30,7 @@ export const MenuHoriz = styled.div`
   width: 300px;
   padding: 30px;
   height: 100%;
-  z-index: 1;
+  z-index: 0;
   background-color: ${Themes.black};
   transition: right 0.5s ease-in-out;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));

@@ -27,6 +27,7 @@ export const Statusbar = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 5px 30px 5px;
+
   div {
     background: #44ff00;
     height: 10px;
@@ -62,27 +63,48 @@ export const DayCard = styled.div`
   border-radius: 20px;
   color: white;
   h1 {
-    color: #f0c106;
+    color: ${Themes.yellow};
   }
 `;
 
 export const SectionDiary = styled.div`
   padding: 20px;
   h1 {
-    color: #f0c106;
+    color: ${Themes.yellow};
     font-size: 1rem;
     margin-bottom: 10px;
   }
+  margin-bottom: 20%;
 `;
 
 export const CardAgenda = styled.div`
   background: #2d2d2d;
-  padding: 40px;
-  margin-bottom: 40px;
-  border-radius: 30px;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
   h1 {
     color: white;
     font-size: 1rem;
     font-weight: 500;
+  }
+  h2 {
+    color: ${Themes.yellow};
+  }
+  section {
+    height: 1px;
+    width: 80%;
+    background: hsla(0, 0%, 18%, 1);
+    background: ${Themes.yellow};
+    margin: auto;
+    margin-top: 30px;
+  }
+  div {
+    margin-left: 70%;
+    width: 30%;
+    text-align: center;
+    border-radius: 50px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    background-color: ${Themes.yellow};
   }
 `;

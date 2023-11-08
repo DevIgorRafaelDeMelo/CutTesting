@@ -5,7 +5,7 @@ import 'firebase/compat/auth';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState('');
 
   useEffect(() => {
     const unsubscribe = firebase.auth().onAuthStateChanged((authUser) => {
@@ -14,6 +14,8 @@ export const AuthProvider = ({ children }) => {
       } else {
         setUser(null);
       }
+
+      
     });
 
     return unsubscribe;
@@ -25,7 +27,6 @@ export const AuthProvider = ({ children }) => {
       // A autenticação foi bem-sucedida e o usuário já será atualizado pelo useEffect.
       return true;
     } catch (error) {
-      console.error('Erro de autenticação:', error);
       return false;
     }
   };

@@ -121,41 +121,14 @@ const pessoa16 = new Pessoa(
   "Cabelo",
   "Pago"
 );
-const pessoa17 = new Pessoa(
-  "14:30",
-  "Roberto",
-  "(51) 9999-9999",
-  "Cabelo",
-  "Pago"
-);
-const pessoa19 = new Pessoa(
-  "15:30",
-  "Roberto",
-  "(51) 9999-9999",
-  "Cabelo",
-  "Pago"
-);
-const pessoa20 = new Pessoa(
-  "16:30",
-  "Roberto",
-  "(51) 9999-9999",
-  "Cabelo",
-  "Pago"
-);
-const pessoa21 = new Pessoa(
-  "17:30",
-  "Roberto",
-  "(51) 9999-9999",
-  "Cabelo",
-  "Pago"
-);
+
 
 ArrayAgenda.push(pessoa1, pessoa2, pessoa3);
 ArrayAgenda.push(pessoa4, pessoa9, pessoa14);
-ArrayAgenda.push(pessoa5, pessoa10, pessoa15);
-ArrayAgenda.push(pessoa6, pessoa11, pessoa16);
-ArrayAgenda.push(pessoa7, pessoa12, pessoa17);
-ArrayAgenda.push(pessoa8, pessoa13, pessoa19);
-ArrayAgenda.push(pessoa20, pessoa21);
+ArrayAgenda.push(pessoa5, pessoa10);
+
+
+
+
 
 export default ArrayAgenda;

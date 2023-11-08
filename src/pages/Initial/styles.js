@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Themes } from "../../styles/themes";
 
 export const Container = styled.div`
-  margin-top: 20%;
+  padding-top: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
