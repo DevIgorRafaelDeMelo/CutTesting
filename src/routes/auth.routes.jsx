@@ -7,6 +7,7 @@ import {
   Register,
   Initial,
   Home,
+  Configuracao,
 } from "../pages";
 
 export const AuthRoutes = () => {
@@ -18,6 +19,7 @@ export const AuthRoutes = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/configuracao" element={<Configuracao />} />
         <Route path="/home" element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

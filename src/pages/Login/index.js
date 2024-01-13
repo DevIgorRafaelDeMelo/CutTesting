@@ -28,8 +28,8 @@ const auth = firebase.auth();
 
 export const Login = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
+  const [email, setEmail] = useState("root@brainlab.com");
+  const [senha, setSenha] = useState("123456");
   const [manterConexao, setManterConexao] = useState(false);
 
   useEffect(() => {

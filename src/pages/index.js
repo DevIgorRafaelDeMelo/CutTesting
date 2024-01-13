@@ -10,3 +10,4 @@ export * from "./ForgotPassword";
 export * from "./ResetPassword";
 export * from "./Initial";
 export * from "./NotFound";
+export * from "./Configuracao";

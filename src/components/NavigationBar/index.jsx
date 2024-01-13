@@ -21,11 +21,6 @@ export const NavigationBar = () => {
 
   return (
     <Container>
-      <Chat>
-        <ChatCircle>
-          <Icon src={iconChat} alt="ícone agenda" />
-        </ChatCircle>
-      </Chat>
       <Navigation>
         <Link to="/home">
           <NavigationItem
@@ -49,7 +44,7 @@ export const NavigationBar = () => {
             />
           </NavigationItem>
         </Link>
-        <Link to="/setting-system">
+        <Link to="/configuracao">
           <NavigationItem
             onClick={() => handleItemClick("settings")}
             selected={selectedItem === "settings"}

@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components';
-import { Themes } from '../../styles/themes';
+import styled, { keyframes } from "styled-components";
+import { Themes } from "../../styles/themes";
 
 const pulseAnimation = keyframes`
   0% {
@@ -21,7 +21,6 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-
 
 export const Navigation = styled.div`
   display: flex;
@@ -54,7 +53,6 @@ export const ChatCircle = styled.div`
 `;
 export const Icon = styled.img`
   width: 30px;
-
 `;
 
 export const NavigationItem = styled.div`
@@ -63,12 +61,12 @@ export const NavigationItem = styled.div`
   align-items: center;
   padding: 7px;
   color: ${(props) => (props.selected ? Themes.dark : Themes.yellow)};
-  background-color: ${(props) => (props.selected ? Themes.yellow : 'transparent')};
+  background-color: ${(props) =>
+    props.selected ? Themes.yellow : "transparent"};
   border-radius: 50%;
   cursor: pointer;
 
-
   &:hover {
-    animation: ${pulseAnimation} 0.5s ;
+    animation: ${pulseAnimation} 0.5s;
   }
 `;

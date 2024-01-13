@@ -18,7 +18,7 @@ import ArrayAgenda from "../../ObjPessoaBD";
 export const Home = () => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
-  const [statusbarCloseOpen, setStatusbatCloseOpen] = useState(false);
+  const [statusbarCloseOpen, setStatusbatCloseOpen] = useState(true);
   const now = new Date();
   const arrayDays = [0, 1, 2, 3, 4, 5, 6];
   useEffect(() => {
@@ -62,7 +62,7 @@ export const Home = () => {
     <>
       <HomeContainer>
         <Saudation>
-          <h1>Olá{userName}, Lucas Konzen</h1>
+          <h1>Olá, Igor Rafael de melo</h1>
           <Statusbar>
             {statusbarCloseOpen ? (
               <>
